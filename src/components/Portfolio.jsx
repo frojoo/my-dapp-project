@@ -1,18 +1,21 @@
 import PortfolioCard from "./PortfolioCard";
+import projectData from "../projectData.json";
 
 function Portfolio() {
   return (
     <div>
       <ul className="bg-indigo-100 max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-8 py-8">
-        {/* object-fit: cover 이미지가 들어온다면 */}
-        <PortfolioCard />
-        <PortfolioCard />
-        <PortfolioCard />
-        <PortfolioCard />
-        <PortfolioCard />
-        <PortfolioCard />
-        <PortfolioCard />
-        <PortfolioCard />
+        {projectData.map((v, i) => {
+          return (
+            <PortfolioCard
+              key={i}
+              index={i}
+              title={v.title}
+              desc={v.desc}
+              image={v.image}
+            />
+          );
+        })}
       </ul>
     </div>
   );

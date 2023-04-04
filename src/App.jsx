@@ -1,20 +1,22 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Introduce from "./components/Introduce";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Main from "./pages/main";
+import Portfolio from "./pages/portfolio";
 
 function App() {
   return (
-    <div className="bg-red-100 min-h-screen">
-      <Header />
-      <main>
-        <Introduce />
-        <Portfolio />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="bg-red-100 min-h-screen">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/portfolio/:portfolioIndex" element={<Portfolio />} />
+        </Routes>
+
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

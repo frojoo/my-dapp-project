@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
 //import Logo from "../images/Egret.png"
 function Header() {
   return (
     <header className="bg-blue-100 h-12 md:h-20">
       <div class="max-w-screen-xl mx-auto h-full flex justify-between items-center">
         {/* //부모가 height이 정해져 있다면 거기에 맞춰서 full로 내려감 */}
-        <div>JY's Portfolio</div>
+        <Link to="/">
+          <button>JY's Portfolio</button>
+        </Link>
         {/* <div>
             <img className="w-12" src={Nft} alt="Nft" />  이미지 첨부
           </div> */}
